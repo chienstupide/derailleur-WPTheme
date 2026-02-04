@@ -1,0 +1,31 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+{# {{ dump(site.admin_email) }} #}
+{# {{dump(posts)}} #}
+{# {{dump(test)}} #}
+
+<div id="home" class="intro route bg-image" style="background-image: url({{ theme.uri }}/images/intro-bg.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h1 class="intro-title mb-4">Association le Dérailleur</h1>
+        </div>
+      </div>
+    </div>
+</div>
+
+{# A LA UNE  #}
+{# {{dump(presentation_thumbail)}} #}
+ {% include 'pages/_partials/_a_la_une.twig' with posts_a_la_une %}
+ {% include 'pages/_partials/_agenda.twig' with posts_agenda %}
+ {% include 'pages/_partials/_activite.twig' with posts_activite %}
+ {% include 'pages/_partials/_presentation.twig'  %}
+ {% include 'pages/_partials/_contact.twig' with posts_lien %}
+
+
+
+
+
+{% endblock %}

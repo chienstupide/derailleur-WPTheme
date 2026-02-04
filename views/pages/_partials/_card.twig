@@ -1,0 +1,13 @@
+ <section class="article-content">
+            {% block headline %}
+                <header>
+                    <h1 class="article-title">{{ post.title }}</h1>
+                    {# <p role="doc-subtitle">{{ post.subtitle }}</p> #}
+                    <img src="{{ post.thumbnail.src| resize(300, 200, 'top') }}" alt="{{ post.title }}">
+                </header>
+            {% endblock %}
+
+            <p class="article-author"><span>By</span> {{ post.author.name }} <span>&bull;</span> {{ post.date }}</p>
+            <a href="{{ post.link }}">Read more</a>
+            {# {{ post.content }} #}
+        </section>

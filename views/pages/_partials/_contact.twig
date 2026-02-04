@@ -1,0 +1,63 @@
+<section id="contact" class="blog-mf sect-pt4 route " style="background-color: #485696;">
+
+    <!-- <div class="overlay-mf"></div> -->
+  <div class="container " > 
+                    <div class="row">
+                                    <div class="col-sm-12">
+                                                        <div class="contact-mf">
+                                                                        <div id="contact" class="box-shadow-full">
+                                                                                <div class="row">
+                                                                                        <div class="col-md-5">
+                                                                                                <div class="title-box-2 pt-4 pt-md-0">
+                                                                                                    <h5 class="title-left">
+                                                                                                    Contactez-nous
+                                                                                                    </h5>
+                                                                                                </div>
+                                                                                                <div class="more-info">
+                                                                                                    <p>
+                                                                                                    Vous voulez être informé.e de nos actualités, <br />contactez-nous :
+                                                                                                    </p>
+                                                                                                    <ul class="list-ico">
+                                                                                                    <li><span class="ion-ios-location"></span> Quartier Nantes Est - Nantes</li>
+                                                                                                    <li><span class="ion-ios-telephone"></span> <a href="tel:0666617255">06 66 61 72 55</a></li>
+                                                                                                    <li><span class="ion-email"></span> <a href="mailto:derailleur@zaclys.net">derailleur@zaclys.net</a></li>
+                                                                                                    </ul>
+                                                                                                    <a name="adhesion"><h5 class="title-left" style="margin-top:2rem;margin-bottom:2rem;">
+                                                                                                    Adhésion
+                                                                                                    </h5></a>
+                                                                                                    <p>Vous souhaitez soutenir nos actions ? L'adhésion à l'association est à <strong>prix libre</strong> (prix indicatif : 10€).<br /><br />
+                                                                                                    Pour adhérer, remplissez le <a href="./documents/bulletin_adhesion_derailleur.pdf" style="font-weight:700" target="_blank">bulletin d'adhésion</a>, puis envoyez le par <a href="mailto:derailleur@zaclys.net">mail</a>. 
+                                                                                                    Le règlement de votre cotisation pourra ensuite se faire par virement, ou bien en espèces ou chèque lors de votre passage sur l'une de nos actions.</p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                                    <div class="col-md-7">
+                                                                                                    <div class="title-box-2 pt-4 pt-md-0">
+                                                                                                        <h5 class="title-left">
+                                                                                                        Réseaux associatifs
+                                                                                                        </h5>
+                                                                                                    </div>
+                                                                                                    <div class="more-info">
+                                                                                                        <p>
+                                                                                                        Le Dérailleur est membre de plusieurs réseaux associatifs de soutien à la pratique du vélo :
+                                                                                                        </p>
+                                                                                                        <ul class="list-ico">
+                                                                                                        {% for post in posts_lien %}
+                                                                                                        <li><img src="{{post.thumbnail.src | resize(50, 50) }}" style="width:50px;margin:0.5rem;" alt="{{post.title}}"/>{{post.content}}</li>
+
+                                                                                                        {% endfor %}
+                                                                                                        {# <li><img src="img/reseaux/clavette.png" style="width:100px;margin:0.5rem -1rem 0.5rem -1rem;" alt="logo clavette"/><a href="https://laclavettedupaysnantais.fr/">La Clavette du pays nantais</a> - Coordination Locale des Ateliers Vélos</li>
+                                                                                                        <li><img src="img/reseaux/velopdl.png" style="width:50px;margin:0.5rem;" alt="logo collectif velo pays de la loire"/><a href="https://velo-pdl.fr/">Collectif Vélo Pays de la Loire</a> - Rendre le vélo accessible</li>
+                                                                                                        <li><img src="img/reseaux/heureuxcyclage.png" style="width:50px;margin:0.5rem;" alt="logo heureux cyclage"/><a href="https://www.heureux-cyclage.org/">L'Heureux Cyclage</a> - Le réseau des ateliers participatifs et solidaires</li>
+                                                                                                        <li><img src="img/reseaux/fub.png" style="width:50px;margin:0.5rem;" alt="logo fub"/><a href="https://www.fub.fr/">La FUB</a> -  Fédération française des usagers de la bicyclette</li> #}
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                    </div>
+                                                                                </div>
+                                                                        </div>
+                                                        </div>
+                                    </div>
+                </div>
+
+</div>
+
+</section>

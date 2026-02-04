@@ -1,0 +1,43 @@
+
+{# {{dump(menu)}} #}
+
+
+     <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll logo-title" href="#page-top">LE DÉRAILLEUR</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+              aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+              <ul class="navbar-nav">
+                {% for menu_item in menu.items %}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="{{ menu_item.link }}">{{ menu_item.title }}</a>
+                    </li>
+                {% endfor %}
+
+                {# <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#home">Accueil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#alaune">À&nbsp;la&nbsp;une</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#agenda">Agenda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#activite">Activités</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#presentation">Présentation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#contact">Contact</a>
+                </li> #}
+              </ul>
+            </div>
+          </div>
+    </nav>

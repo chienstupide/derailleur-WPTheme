@@ -1,0 +1,259 @@
+<section id="agenda" class="blog-mf sect-pt4 route">
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Agenda
+            </h3>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+{# {{dump(posts_agenda.meta('_montheme_agenda_type_key'))}} #}
+{# {{ post.raw_meta('my_custom_field') }} #}
+
+{% for post in posts_agenda %}
+    {# {{dump(post)}} #}
+    {# {{dump(post.thumbnail.src)}} #}
+  
+		    <div class="col-md-4" style="padding-top:10px;margin-bottom:3em;">
+          <div class="card card-blog" style="border-width:3px;">
+            <div class="card-img">
+              <a href="#"><img src="{{post.thumbnail.src}}" alt="" class="img-fluid"></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h4 class="category">{{ post.meta('_montheme_agenda_type_key')}}</h4>
+                </div>
+              </div>
+              <h3 class="card-title">{{post.title}}</h3>
+              <p class="card-description">
+                {{post.content}}
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="post-author">
+
+              {% if (post.meta('_montheme_agenda_lieu_key') is defined
+                 and post.meta('_montheme_agenda_lieu_key') is not empty) %} 
+                 <span class="author" title="{{ post.meta('_montheme_agenda_lieu_key') }}">
+                    {{ post.meta('_montheme_agenda_lieu_key') }}
+                    </span>
+                    {% else %}
+                    Lieu de RDV à confirmer
+                 {% endif %}
+
+                
+              </div>
+              <div class="post-date">
+                {# <span class="ion-ios-clock-outline"></span> Prochain RDV : à déterminer #}
+                <span class="ion-ios-clock-outline"></span>
+                Prochain RDV : 
+                {% if (post.meta('_montheme_agenda_date_key') is defined
+                 and post.meta('_montheme_agenda_date_key') is not empty) %} 
+                    {{ post.meta('_montheme_agenda_date_key') }}
+                    {% else %}
+                    à déterminer
+                 {% endif %}
+                  {# {{ post.meta('_montheme_agenda_date_key')??:'à déterminer'}} #}
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endfor %}
+        <!-- COUPS DE PEDALE -->
+		    <div class="col-md-4" style="padding-top:10px;margin-bottom:3em;">
+          <div class="card card-blog" style="border-width:3px;">
+            <div class="card-img">
+              <a href="#"><img src="img/mecacouture.jpg" alt="" class="img-fluid"></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h4 class="category">événement</h4>
+                </div>
+              </div>
+              <h3 class="card-title">Vendredi au jardin des plantes</h3>
+              <p class="card-description">
+                Sortie accompagnée par groupe de 3 personnes maximum.
+                Aller retour de la masion de quartier de la botière au jardin des plantes.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="post-author">
+                <a href="#">
+                  <span class="author" title="147 Route de Sainte Luce - Nantes">Maison de quartier de la Bottière</span>
+                </a>
+              </div>
+              <div class="post-date">
+                <span class="ion-ios-clock-outline"></span> Prochain RDV : à déterminer
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- APERO DERAILLES -->
+		    {# <div class="col-md-4 hidden" style="padding-top:10px;margin-bottom:3em;">
+          <div class="card card-blog" style="border-width:3px;">
+            <div class="card-img">
+              <a href="#"><img src="img/mecacoutures.jpg" alt="" class="img-fluid"></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h4 class="category">événement</h4>
+                </div>
+              </div>
+              <h3 class="card-title">Les Apéros Déraillés</h3>
+              <p class="card-description">
+                Echange autour de l'asso, des actions à venir, du bénévolat et partage d'expérience et d'information locales autour du vélo, 
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="post-author">
+                <a href="#">
+                  <span class="author" title="">Lieu à confirmer</span>
+                </a>
+              </div>
+              <div class="post-date">
+                <span class="ion-ios-clock-outline"></span> Prochain RDV : le vendredi 13 mars, à partir de 19h30.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CAFE BRICOLE -->
+       <div class="col-md-4" style="padding-top:10px;margin-bottom:3em;">
+          <div class="card card-blog" style="border-width:3px;">
+            <div class="card-img">
+              <a href="#"><img src="img/cafebricole3-agenda.jpg" alt="" class="img-fluid"></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h4 class="category">Atelier</h4>
+                </div>
+              </div>
+              <h3 class="card-title"><a name="cbagenda">Café bricole</a></h3>
+              <p class="card-description">
+                Atelier d'autoréparation et papotage, tout public.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="post-author">
+                <a href="#">
+                  <span class="author">Lieu à confirmer</span>
+                </a>
+              </div>
+              <div class="post-date">
+                <span class="ion-ios-clock-outline"></span> Prochain RDV : Samedi 27 juin 2026<br />
+              </div>
+            </div>
+          </div>
+        </div>
+		<!-- BALADE -->
+        <div class="col-md-4" style="padding-top:10px;margin-bottom:3em;">
+          <div class="card card-blog" style="border-width:3px;">
+            <div class="card-img">
+              <a href="#"><img src="img/balade-agenda.jpg" alt="" class="img-fluid"></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h4 class="category">balade</h4>
+                </div>
+              </div>
+              <h3 class="card-title">Balade estivale</h3>
+              <p class="card-description">
+				  <!--<a href="img/balade1711.png" target="_blank">Télécharger le flyer (image)</a>-->
+				  Balade conviviale pour découvrir Nantes et ses alentours (sur inscription).
+              </p>
+            </div>
+            
+            <div class="card-footer">
+              <div class="post-author">
+                <a href="#">
+                  <span class="author">Lieu de RDV à confirmer</span>
+                 
+                </a>
+              </div>
+            
+              <div class="post-date ">
+                <span class="ion-ios-clock-outline"></span> Prochain RDV : Dimanche 28 juin 2026<br />
+              </div>
+            </div>
+          </div>
+        </div>
+		<!-- CAFE COUTURE -->
+		    <div class="col-md-4" style="padding-top:10px;margin-bottom:3em;">
+          <div class="card card-blog" style="border-width:3px;">
+            <div class="card-img">
+              <a href="#"><img src="img/mecacouture.jpg" alt="" class="img-fluid"></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h4 class="category">événement</h4>
+                </div>
+              </div>
+              <h3 class="card-title">Méca & Couture</h3>
+              <p class="card-description">
+                Une journée d'ateliers autour du vélo - Pour tous les âges
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="post-author">
+                <a href="#">
+                  <span class="author" title="147 Route de Sainte Luce - Nantes">Maison de quartier de la Bottière</span>
+                </a>
+              </div>
+              <div class="post-date">
+                <span class="ion-ios-clock-outline"></span> Prochain RDV : Samedi 28 mars 2026
+              </div>
+            </div>
+          </div>
+        </div>
+		<!-- COUPS DE PEDALE -->
+		    <div class="col-md-4 hidden" style="padding-top:10px;margin-bottom:3em;">
+          <div class="card card-blog" style="border-width:3px;">
+            <div class="card-img">
+              <a href="#"><img src="img/mecacouture.jpg" alt="" class="img-fluid"></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h4 class="category">événement</h4>
+                </div>
+              </div>
+              <h3 class="card-title">Vendredi au jardin des plantes</h3>
+              <p class="card-description">
+                Sortie accompagnée par groupe de 3 personnes maximum.
+                Aller retour de la masion de quartier de la botière au jardin des plantes.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="post-author">
+                <a href="#">
+                  <span class="author" title="147 Route de Sainte Luce - Nantes">Maison de quartier de la Bottière</span>
+                </a>
+              </div>
+              <div class="post-date">
+                <span class="ion-ios-clock-outline"></span> Prochain RDV : à déterminer
+              </div>
+            </div>
+          </div>
+        </div> #}
+
+
+    </div><!-- fin row -->
+  </section>
+
+
+
+</section>

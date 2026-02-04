@@ -1,0 +1,33 @@
+ <section id="alaune" class="about-mf sect-pt4 route">
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="title-box text-center">
+          <h3 class="title-a">
+            À la une
+          </h3>
+          <p class="subtitle-a"><!-- sous-titre--></p>
+          <div class="line-mf"></div>
+        </div>
+      </div>
+    </div>
+     <div class="row ">
+      <div class="col-sm-12">
+        <div class="box-shadow-full">
+            {# {{dump(posts_a_la_une)}} #}
+            {% for post in posts_a_la_une %}
+                <div class="col-md-6 alaune" style="max-width:100%;margin-top:1.2em">
+                        <h4><strong>{{post.post_title}}</strong>.</h4>
+                        <p>{{post.post_content}}</p>
+                
+                </div>
+            {% endfor %}
+
+
+          </div>
+        </div>
+      </div>
+     </div>
+<!--END -->
+  </div>
+  </section>
