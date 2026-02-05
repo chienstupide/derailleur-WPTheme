@@ -1,0 +1,25 @@
+{
+  "name": "chienstupide/derailleur-wordpress-theme",
+  "description": "Simple theme with Timber for Wordpress",
+  "keywords"   : ["wordpress", "theme"],
+  "license": "MIT",
+  "type": "wordpress-theme",
+  "homepage": "http://rsco.sytes.net/",
+  "authors": [
+    {
+      "name": "Romain Cos",
+      "homepage": "http://rsco.sytes.net/",
+      "email": "romain.cos+wordpress@proton.me",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/chienstupide/derailleur-wordpress-theme/issues"
+  },
+  "require": {
+    "php": ">=7.2.24",
+    "ext-json": "*",
+    "timber/timber": "^2.3"
+  }
+}
+
