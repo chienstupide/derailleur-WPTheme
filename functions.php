@@ -1,11 +1,9 @@
 <?php
 require 'vendor/autoload.php';
-// require_once  __DIR__ .'/../../../vendor/autoload.php';
 
+// use Timber\Timber;
 
-use Timber\Timber;
-
-Timber::init();
+// Timber::init();
 
 // wp_nav_menu( [
 //     'menu' => 'primary',

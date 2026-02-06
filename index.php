@@ -1,7 +1,9 @@
 <?php
 
 
+use Timber\Timber;
 
+Timber::init();
 
 $context = Timber::context();
 // context contient toutes les variables globales de Timber
