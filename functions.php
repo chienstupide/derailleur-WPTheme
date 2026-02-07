@@ -1,6 +1,7 @@
 <?php
-require 'vendor/autoload.php';
 
+
+require 'vendor/autoload.php';
 // use Timber\Timber;
 
 // Timber::init();
@@ -8,6 +9,8 @@ require 'vendor/autoload.php';
 // wp_nav_menu( [
 //     'menu' => 'primary',
 // ] );
+
+
 
 function montheme_supports(){
 

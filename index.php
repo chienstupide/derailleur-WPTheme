@@ -1,11 +1,12 @@
 <?php
 
-
+// require 'vendor/autoload.php';
 use Timber\Timber;
 
 Timber::init();
-
+// dd($wpdb);
 $context = Timber::context();
+// dd($context);
 // context contient toutes les variables globales de Timber
 
 $posts = Timber::get_posts( [
