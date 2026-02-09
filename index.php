@@ -49,6 +49,10 @@ $context['posts_activite'] = $posts_activite;
 $context['presentation_thumbail'] = $presentation_thumbail;
 $context['posts_lien'] = $posts_lien;
 
+$context['derailleur_contact_phone'] = get_option('derailleur_contact_phone');
+$context['derailleur_contact_address'] = get_option('derailleur_contact_address');
+$context['derailleur_contact_email'] = get_option('derailleur_contact_email');
+
 $context['test'] = 'Hello Timber!';
 
 Timber::render('views/pages/index.twig', $context);
