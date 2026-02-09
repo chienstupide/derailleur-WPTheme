@@ -188,3 +188,55 @@ add_action('save_post', 'montheme_agenda_save');
 // dump($_POST);
 
 
+
+// ADMIN CONFIGURATION
+function my_custom_section_callback(){
+	// echo 'Champs personnalisés pour les informations de contact';
+}
+
+//callback to print a simple input field
+function my_custom_field_callback(){
+	echo '<fieldset><legend class="screen-reader-text"><span>Information de contact</span></legend>
+            <br>
+            <label>Téléphone : <input name="derailleur_contact_phone" value="'. get_option('derailleur_contact_phone') .'" /></label>
+            <br>
+            <label>Adresse : <input name="derailleur_contact_address" value="'. get_option('derailleur_contact_address') .'" /></label>
+            <br>
+            <label>Email : <input name="derailleur_contact_email" value="'. get_option('derailleur_contact_email') .'" /></label>
+            </fieldset>';
+
+    }
+
+
+
+function add_my_custom_section_to_settings(){
+
+    //register setting to save the data
+	register_setting( 'general', 'derailleur_contact_phone' );
+	register_setting( 'general', 'derailleur_contact_address' );
+	register_setting( 'general', 'derailleur_contact_email' );
+
+	//add the section to general page in admin panel
+	add_settings_section(
+		'derailleur_contact_section', //id of the section
+		'',
+		'my_custom_section_callback',
+		'general',
+		// array(
+		// 	'before_section' => 'Text Before the Section', //html for before the section
+		// 	'after_section' => 'Text After the Section', //html for after the section
+		// )
+	);
+
+	//add a sample field to this section.
+	add_settings_field(
+		'derailleur_contact_phone',
+		'Information de contact',
+		'my_custom_field_callback',
+		'general',
+		//put the id of custom section here:
+		'derailleur_contact_section'
+	);
+
+}
+add_action('admin_init', 'add_my_custom_section_to_settings');
