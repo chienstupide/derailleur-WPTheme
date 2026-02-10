@@ -28,7 +28,7 @@
             <div class="card-body">
               <div class="card-category-box">
                 <div class="card-category">
-                  <h4 class="category">{{ post.meta('_montheme_agenda_type_key')}}</h4>
+                  <h4 class="category">{{ post.meta('_derailleur_agenda_type_key')}}</h4>
                 </div>
               </div>
               <h3 class="card-title">{{post.title}}</h3>
@@ -39,10 +39,10 @@
             <div class="card-footer">
               <div class="post-author">
 
-              {% if (post.meta('_montheme_agenda_lieu_key') is defined
-                 and post.meta('_montheme_agenda_lieu_key') is not empty) %} 
-                 <span class="author" title="{{ post.meta('_montheme_agenda_lieu_key') }}">
-                    {{ post.meta('_montheme_agenda_lieu_key') }}
+              {% if (post.meta('_derailleur_agenda_lieu_key') is defined
+                 and post.meta('_derailleur_agenda_lieu_key') is not empty) %} 
+                 <span class="author" title="{{ post.meta('_derailleur_agenda_lieu_key') }}">
+                    {{ post.meta('_derailleur_agenda_lieu_key') }}
                     </span>
                     {% else %}
                     Lieu de RDV à confirmer
@@ -51,16 +51,16 @@
                 
               </div>
               <div class="post-date">
-                {# <span class="ion-ios-clock-outline"></span> Prochain RDV : à déterminer #}
+                
                 <span class="ion-ios-clock-outline"></span>
                 Prochain RDV : 
-                {% if (post.meta('_montheme_agenda_date_key') is defined
-                 and post.meta('_montheme_agenda_date_key') is not empty) %} 
-                    {{ post.meta('_montheme_agenda_date_key') }}
+                {% if (post.meta('_derailleur_agenda_date_key') is defined
+                 and post.meta('_derailleur_agenda_date_key') is not empty) %} 
+                    {{ post.meta('_derailleur_agenda_date_key') }}
                     {% else %}
                     à déterminer
                  {% endif %}
-                  {# {{ post.meta('_montheme_agenda_date_key')??:'à déterminer'}} #}
+                  
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\DerailleurMeta;
+use App\DerailleurMetaPost;
 
 
 require 'vendor/autoload.php';
@@ -183,16 +184,17 @@ add_action('wp_head', function() {
 add_action ('after_setup_theme', 'montheme_supports');
 add_action( 'wp_enqueue_scripts', 'montheme_register_assets' );
 
-add_action('add_meta_boxes','montheme_metaboxes');
-
-add_action('save_post', 'montheme_agenda_save');
-
+// add_action('add_meta_boxes','montheme_metaboxes');
+// add_action('save_post', 'montheme_agenda_save');
 
 
 
+$meta = new DerailleurMetaPost('admin_init','agenda','Agenda','post');
+$meta
+->add('agenda_type', 'Type :','select',['Atelier','Evénement','Balade'])
+->add('agenda_lieu', 'Lieu :')
+->add('agenda_date', 'Date :', 'date');
 
-// ADMIN CONFIGURATION
-// require_once 'src/DearailleurMeta.php';
 
 // hook admin_init
  //group  general

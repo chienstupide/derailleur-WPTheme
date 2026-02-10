@@ -8,6 +8,7 @@ CONST PREFIX="derailleur_";
         private string $hook,
         private array $fields)
         {
+            //hook admin_init
 // $fields =['type' => 'text', 'name' => 'contact_phone'];
          add_action($hook, [&$this,'create_fields']);
 
