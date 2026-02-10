@@ -1,16 +1,3 @@
-function loadHTML(elementId) {
-	console.log("Loading "+elementId);
-	// var file = 'sections/'+elementId+'.html';
-    // fetch(file,{
-	// 		headers: {
-	// 		  'Cache-Control': 'no-cache'
-	// 		}
-	// 	  } )
-    // .then(response => response.text())
-    // .then(data => document.getElementById(elementId).innerHTML = data)
-    // .catch(error => console.error('Error loading ' + file, error));
-}
-// 
 
 
 (function ($) {
@@ -19,14 +6,6 @@ function loadHTML(elementId) {
     var navHeight = nav.outerHeight();
 
 
-	$(window).on('load', function () {
-		loadHTML("intro");
-		loadHTML("alaune");
-		loadHTML("agenda");
-		loadHTML("activite");
-		loadHTML("presentation");
-		loadHTML("contact");
-	});
 
   $('.navbar-toggler').on('click', function() {
     if( ! $('#mainNav').hasClass('navbar-reduce')) {
@@ -151,7 +130,7 @@ function loadHTML(elementId) {
 		fetch('version.html') // Replace with your file path
 		.then(response => response.text())
 		.then(data => {
-			document.getElementById('fileContent').textContent = data.substring(0,10);
+			document.getElementById('versionFile').textContent = data.substring(0,10);
 		})
 		.catch(error => console.error('Error loading file:', error));
 	  });

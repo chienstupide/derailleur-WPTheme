@@ -5,15 +5,6 @@ use App\DerailleurMetaPost;
 
 
 require 'vendor/autoload.php';
-// use Timber\Timber;
-
-// Timber::init();
-
-// wp_nav_menu( [
-//     'menu' => 'primary',
-// ] );
-
-
 
 function montheme_supports(){
 
@@ -26,24 +17,6 @@ function montheme_supports(){
     ] );
 }
 
-// dd(get_template_directory_uri());
-
-
-    // <script src="lib/jquery/jquery.min.js"></script>
-    // <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    // <script src="lib/easing/easing.min.js"></script>
-    // <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    // <script src="lib/counterup/jquery.counterup.js"></script>
-
-//   <!-- Bootstrap CSS File -->
-//   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-//       <!-- Libraries CSS Files -->
-//   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-//   <link href="lib/animate/animate.min.css" rel="stylesheet">
-//   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-//   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-//   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
 function montheme_register_assets(){
 
     // CSS FILES
@@ -51,7 +24,7 @@ function montheme_register_assets(){
     wp_register_style('bootstrap-css', get_template_directory_uri(). '/lib/bootstrap/css/bootstrap.min.css');
     wp_register_style('font-awesome', get_template_directory_uri(). '/lib/font-awesome/css/font-awesome.min.css');
     wp_register_style('animate', get_template_directory_uri(). '/lib/animate/animate.min.css');
-    wp_register_style('ionicons', get_template_directory_uri(). '/lib/ionicons/css/ionicons.min.css');
+    // wp_register_style('ionicons', get_template_directory_uri(). '/lib/ionicons/css/ionicons.min.css');
     wp_register_style('owlcarousel', get_template_directory_uri(). '/lib/owlcarousel/assets/owl.carousel.min.css');
     wp_register_style('lightbox', get_template_directory_uri(). '/lib/lightbox/css/lightbox.min.css');
 
@@ -70,7 +43,7 @@ function montheme_register_assets(){
     wp_enqueue_style('bootstrap-css');
     wp_enqueue_style('font-awesome');
     wp_enqueue_style('animate');
-    wp_enqueue_style('ionicons');
+    // wp_enqueue_style('ionicons');
     wp_enqueue_style('owlcarousel');
     wp_enqueue_style('lightbox');
     wp_enqueue_style('montheme');
@@ -170,25 +143,11 @@ function montheme_agenda_save($post_id){
     }
 
 }
-// add_action ('after_setup_theme', function() {
-//     add_theme_support('post-thumbnails');
-//     // add_theme_support('title-tag');
-// });
-add_action('wp_head', function() {
-    ?>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
-    <?php
-});
+
 add_action ('after_setup_theme', 'montheme_supports');
 add_action( 'wp_enqueue_scripts', 'montheme_register_assets' );
 
-// add_action('add_meta_boxes','montheme_metaboxes');
-// add_action('save_post', 'montheme_agenda_save');
-
-
-
+// Ajout des metaboxes pour les articles
 $meta = new DerailleurMetaPost('admin_init','agenda','Agenda','post');
 $meta
 ->add('agenda_type', 'Type :','select',['Atelier','Evénement','Balade'])
@@ -196,9 +155,7 @@ $meta
 ->add('agenda_date', 'Date :', 'date');
 
 
-// hook admin_init
- //group  general
- // fields [type, name]
+// ajout des custom data pour la page Settings
 $generalInfo = new DerailleurMeta('admin_init',[
     ['type' => 'text','name' => 'contact_phone'],
     ['type' => 'text','name' => 'contact_address'],
