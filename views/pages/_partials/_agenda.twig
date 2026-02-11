@@ -17,9 +17,11 @@
 {# {{ post.raw_meta('my_custom_field') }} #}
 
 {% for post in posts_agenda %}
-    {# {{dump(post)}} #}
-    {# {{dump(post.thumbnail.src)}} #}
-  
+    {% if (
+      post.meta('_derailleur_agenda_date_key') is defined
+      and post.meta('_derailleur_agenda_date_key') is not empty
+      and post.meta('_derailleur_agenda_date_key') > now|date("Y-m-d")
+          ) %} 
 		    <div class="col-md-4" style="padding-top:10px;margin-bottom:3em;">
           <div class="card card-blog" style="border-width:3px;">
             <div class="card-img">
@@ -39,14 +41,16 @@
             <div class="card-footer">
               <div class="post-author">
 
-              {% if (post.meta('_derailleur_agenda_lieu_key') is defined
-                 and post.meta('_derailleur_agenda_lieu_key') is not empty) %} 
-                 <span class="author" title="{{ post.meta('_derailleur_agenda_lieu_key') }}">
+              {% if (
+                  post.meta('_derailleur_agenda_lieu_key') is defined
+                  and post.meta('_derailleur_agenda_lieu_key') is not empty
+                  ) %} 
+                  <span class="author" title="{{ post.meta('_derailleur_agenda_lieu_key') }}">
                     {{ post.meta('_derailleur_agenda_lieu_key') }}
                     </span>
-                    {% else %}
+                {% else %}
                     Lieu de RDV à confirmer
-                 {% endif %}
+              {% endif %}
 
                 
               </div>
@@ -55,17 +59,20 @@
                 <span class="ion-ios-clock-outline"></span>
                 Prochain RDV : 
                 {% if (post.meta('_derailleur_agenda_date_key') is defined
-                 and post.meta('_derailleur_agenda_date_key') is not empty) %} 
-                    {{ post.meta('_derailleur_agenda_date_key') }}
+                      and post.meta('_derailleur_agenda_date_key') is not empty
+                      and post.meta('_derailleur_agenda_date_key') > now
+                      ) %} 
+                    {{ post.meta('_derailleur_agenda_date_key') | date("l d F Y") }}
                     {% else %}
                     à déterminer
+                    {# {{ post.meta('_derailleur_agenda_date_key') | date("l d F Y") }} #}
                  {% endif %}
                   
               </div>
             </div>
           </div>
         </div>
-
+  {% endif %}
 {% endfor %}
         <!-- COUPS DE PEDALE -->
 		    <div class="col-md-4" style="padding-top:10px;margin-bottom:3em;">
